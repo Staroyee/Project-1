@@ -20,17 +20,34 @@
 
 .container {
     height: 100vh;
-    margin-top: 10em;
     text-align: center;
     
 }
 
 #form-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     border: 1px solid rgb(148, 140, 140);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.borderWrap {
+    border: 1px solid rgb(148, 140, 140);
+    padding: 20px 200px;
 }
 
 .h3-input {
     font-size: 25px;
 }
 
+.arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+  }
 
