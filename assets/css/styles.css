@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: azure;
+    padding-top: 5px;
+}
+
+.header h1 {
+    cursor: default;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+.container {
+    height: 100vh;
+    margin-top: 10em;
+    text-align: center;
+    
+}
+
+#form-input {
+    border: 1px solid rgb(148, 140, 140);
+}
+
+.h3-input {
+    font-size: 25px;
+}
+
