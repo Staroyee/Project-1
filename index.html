@@ -22,38 +22,44 @@
                 <h3 class="h3-input">Search for your favourite movies!</h3>
                 <input class="u-full-width" type="text" placeholder="Search" id="searchInput">
                 <a href="#info"><button class="button-primary">Search</button></a>
-            </form>
-        </div>
-        <div class="arrow-wrapper">
+                </form>
+            </div>
+            <div class="arrow-wrapper">
             <a href="#info"><p class="downArrow">🔻</p></a>
+            </div>
         </div>
     </div>
     <!-- INFO HEADER -->
     <div id="info" class="info-header">
-        <h1>
-        INFO
-        </h1>
+        <h2><strong>INFO</strong></h2>
     </div>
     <!--COLUMNS: FAVOURITES - MOVIE DETAILS - REVIEWS -->
-    <div class="container">
-        <div class="row">
+    <div class="detail-container">
+        <div class="row" id="detail-row">
             <div class="four columns">
-             <h2 id="favourites">FAVOURITES</h2>
+                <h2 id="favourites">FAVOURITES</h2>
+                <div class="favourites-container">
+
+                </div>
             </div>
             <div class="four columns">
-             <h2 id="movieDetails">MOVIE DETAILS</h2>
-             <button class="button-secondary" id="favouritesButton">Save To Favourites</button>
-             <p>Title</p>
-             <p>Year</p>
-             <p>Genre</p>
-             <p>Description</p>
+                <h2 id="movieDetails">MOVIE DETAILS</h2>
+                    <button class="button-secondary" id="favouritesButton">💾</button>                   
+                <div class="movie-container">
+                    <p>Title</p>
+                    <p>Year</p>
+                    <p>Genre</p>
+                    <p>Description</p>
+                </div>
             </div>
             <div class="four columns">
-             <h2 id="reviews">REVIEWS</h2>
-             <p>Title</p>
-             <p>Author</p>
-             <p>Summary</p>
-             <a id="reviewLink" href="">NY Times review</a>
+                <h2 id="reviews">REVIEWS</h2>
+                <div class="reviews-container">
+                    <p>Title</p>
+                    <p>Author</p>
+                    <p>Summary</p>
+                    <a id="reviewLink" href="">NY Times review</a>
+                </div>
             </div>
         </div>
     </div>

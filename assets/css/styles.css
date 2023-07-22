@@ -5,6 +5,9 @@
 }
 /* MAIN SECTION CSS */
 .header {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
     width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: azure;
@@ -16,13 +19,25 @@
     text-align: center;
     padding-bottom: 5px;
     font-size: 30px;
+    margin-bottom: 0%;
 }
 
 .container {
+    position: relative;
+    z-index: 1;
     height: 100vh;
     text-align: center;
     
 }
+
+.arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
 #form-input {
     display: flex;
@@ -38,18 +53,87 @@
 .borderWrap {
     border: 1px solid rgb(148, 140, 140);
     padding: 20px 200px;
+    box-sizing: border-box;
 }
 
 .h3-input {
     font-size: 25px;
 }
 
-.arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100%;
-  }
+p.downArrow{
+    color: transparent;
+    text-shadow: 0 0 black;
+    margin-bottom: 0px;
+}
 
+.arrow-wrapper > a {
+    text-decoration-line: none;
+    font-size: 50px;
+}
 
 /* INFO SECTION CSS */
+.info-header {
+    margin-top: 10px;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: azure;
+    padding-top: 5px;
+}
+
+.info-header h2 {
+    font-size: 30px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.detail-container {
+    height: 100vh;
+    width: 100%;
+}
+
+.four.columns {
+    border: 1px solid black;
+    height: 95vh;
+    background-color: powderblue;
+}
+
+.four.columns h2 {
+    position: relative;
+    left: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+h2#movieDetails {
+    position: relative;
+    left: -5px;
+}
+
+.favourites-container,
+.movie-container,
+.reviews-container {
+    position: relative;
+    top: -12px;
+    height: 88vh;
+    width: 100%;
+    padding-top: 10px;
+    background-color: azure;
+    overflow-y: scroll;
+}
+
+.movie-container {
+    position: relative;
+    top: -50px;
+}
+
+.button-secondary {
+    position: relative;
+    right: 5px;
+    float: right;
+    bottom: 58px;
+    font-size: 20px;
+    padding: 0 10px;
+    margin: 0;
+    border: none;
+}
