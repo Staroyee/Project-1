@@ -11,18 +11,23 @@ var infoSection = document.getElementById('info');
 formEl.addEventListener('submit', function (event) {
   event.preventDefault();
   infoSection.scrollIntoView({ behavior: 'smooth'});
+  
   //CALL THE FUNCTIONS ON SUBMIT OF FORM ELEMENT
   getMovieDetails();
   getReviewDetails();
 })
 
 //GET RESPONSE FROM OMDB-API FOR MOVIE DETAILS IN AN ARRAY
-function getMovieDetails() {
-  movieTitle = ""
-  var movieTitle = document.getElementById('searchInput').value;
-  
-  var omdbQueryUrl = "http://www.omdbapi.com/?apikey=" + omdbAPIKEY + "&t=" + movieTitle;
+var movieTitle = "";
+$("#searchInput").change(function() {
+  movieTitle = $(this).val();
+  console.log(movieTitle)
+});
 
+function getMovieDetails(movie) {
+    
+  var omdbQueryUrl = "http://www.omdbapi.com/?apikey=" + omdbAPIKEY + "&t=" + movieTitle;
+console.log(omdbQueryUrl);
   fetch(omdbQueryUrl)
     .then(function (response) {
       if (!response.ok) {
@@ -51,9 +56,8 @@ function getMovieDetails() {
 }
 
 //GET RESPONSE FROM NY-TIMES-API FOR MOVIE REVIEW DETAILS IN AN ARRAY
+
 function getReviewDetails() {
-  movieTitle = ""
-  var movieTitle = document.getElementById('searchInput').value;
 
   var nyTimesQueryUrl = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=" + movieTitle + "&api-key=" + nyTimesAPIKEY;
 
@@ -116,12 +120,13 @@ function displayFavourites() {
   favouritesContainer.innerHTML = ''; //Clear previous favourites
 
   if (favourites.length === 0) {
-    var noFavouritesMessage = document.createElement('p');
+    var noFavouritesMessage = document.createElement('button');
     noFavouritesMessage.innerText = 'No favourites saved yet.';
     favouritesContainer.appendChild(noFavouritesMessage);
   } else {
     favourites.forEach(function(favourite) {
-      var favouriteElement = document.createElement('p');
+      var favouriteElement = document.createElement('button');
+      favouriteElement.setAttribute('class', 'movieBtn');
       favouriteElement.innerText = favourite;
       favouritesContainer.appendChild(favouriteElement);
     });
@@ -130,3 +135,9 @@ function displayFavourites() {
 
 // Displays favourites on page load
 displayFavourites();
+
+$('.movieBtn').click(function() {
+  movieTitle = $(this).html();
+  getMovieDetails();
+  getReviewDetails();
+});
