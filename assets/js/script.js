@@ -82,3 +82,49 @@ function getReviewDetails() {
       return {}; // RETURN AN EMPTY OBJECT IF THERE IS AN ERROR TO AVOID FURTHER
     });
 };
+
+//EVENT-LISTENER FOR SAVE BUTTON
+var saveButton = document.getElementById('favouritesButton');
+saveButton.addEventListener('click', function() {
+  var movieTitle = document.getElementById('movieTitle').innerText;
+  saveToFavourites(movieTitle);
+});
+
+//SAVE MOVIE TITLE TO favourites IN LOCAL STORAGE
+function saveToFavourites(movieTitle) {
+  // Get existing favourites from local storage or display an empty array
+  var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+
+  // Check if the movie title is already in favourites
+  if (!favourites.includes(movieTitle)) {
+    favourites.push(movieTitle);
+    // Save updated favourites array back to local storage
+    localStorage.setItem ('favourites', JSON.stringify(favourites));
+    alert("Movie saved to favourites!");
+    displayFavourites();
+  } else {
+      alert("Movie is already in favourites")
+  }
+}
+
+// DISPLAY FAVOURITES ON THE HTML PAGE
+function displayFavourites() {
+  var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+  var favouritesContainer = document.getElementById('favouritesContainer');
+  favouritesContainer.innerHTML = ''; //Clear previous favourites
+
+  if (favourites.length === 0) {
+    var noFavouritesMessage = document.createElement('p');
+    noFavouritesMessage.innerText = 'No favourites saved yet.';
+    favouritesContainer.appendChild(noFavouritesMessage);
+  } else {
+    favourites.forEach(function(favourite) {
+      var favouriteElement = document.createElement('p');
+      favouriteElement.innerText = favourite;
+      favouritesContainer.appendChild(favouriteElement);
+    });
+  }
+}
+
+// Displays favourites on page load
+displayFavourites();
