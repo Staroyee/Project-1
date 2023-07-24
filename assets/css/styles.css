@@ -8,6 +8,11 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+
 /* MAIN SECTION CSS */
 .header {
     position: absolute;
@@ -17,6 +22,7 @@ html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: azure;
     padding-top: 5px;
+    color: black;
 }
 
 .header h1 {
@@ -50,12 +56,12 @@ html {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    border: 1px solid rgb(148, 140, 140);
     padding: 20px;
     box-sizing: border-box;
 }
 
 .borderWrap {
+    background: linear-gradient(180deg, rgb(26, 26, 26) 0%, rgb(103, 103, 103) 51%, rgb(26, 26, 26) 100%);
     border: 1px solid rgb(148, 140, 140);
     padding: 20px 200px;
     box-sizing: border-box;
@@ -89,6 +95,7 @@ p.downArrow{
     font-size: 30px;
     padding: 10px 0px;
     text-align: center;
+    color: black;
 }
 
 .detail-container {
@@ -97,9 +104,10 @@ p.downArrow{
 }
 
 .four.columns {
-    border: 1px solid black;
+    padding-top: 10px;
+    border: 1px solid rgb(255, 255, 255);
     height: 95vh;
-    background-color: powderblue;
+    background-color: rgb(29, 29, 29);
 }
 
 .four.columns h2 {
@@ -119,6 +127,7 @@ h2#movieDetails {
 .favourites-container,
 .movie-container,
 .reviews-container {
+    background: linear-gradient(180deg, rgb(103, 103, 103) 0%, rgb(26, 26, 26) 100%);
     position: relative;
     top: -12px;
     height: 88vh;
@@ -129,6 +138,7 @@ h2#movieDetails {
 }
 
 .movie-container {
+    
     position: relative;
     top: -50px;
 }
