@@ -31,10 +31,10 @@ function getMovieDetails() {
     .then(function (data) {
       if (movieTitle) {
         // POPULATE THE MOVIE DETAILS INTO THE HTML ELEMENTS
-        document.getElementById('movieTitle').innerText = data.Title;
-        document.getElementById('movieYear').innerText = data.Year;
-        document.getElementById('movieGenre').innerText = data.Genre;
-        document.getElementById('movieDescription').innerText = data.Plot;
+        document.getElementById('movieTitle').innerText = data.Title || "N/A";
+        document.getElementById('movieYear').innerText = data.Year || "N/A";
+        document.getElementById('movieGenre').innerText = data.Genre || "N/A";
+        document.getElementById('movieDescription').innerText = data.Plot || "N/A";
       } else if (movieTitle === "") {
         document.getElementById('movieTitle').innerText = "N/A";
         document.getElementById('movieYear').innerText = "N/A";
@@ -66,10 +66,10 @@ function getReviewDetails() {
       console.log(data);
       if (movieTitle) {
         // POPULATE THE REVIEW DETAILS INTO THE HTML ELEMENTS
-        document.getElementById('reviewTitle').innerText = data.results[0].display_title;
-        document.getElementById('reviewAuthor').innerText = data.results[0].byline;
-        document.getElementById('reviewSummary').innerText = data.results[0].summary_short;
-        document.getElementById('reviewLink').href = data.results[0].link.url;
+        document.getElementById('reviewTitle').innerText = data.results[0].display_title || "N/A";
+        document.getElementById('reviewAuthor').innerText = data.results[0].byline || "N/A";
+        document.getElementById('reviewSummary').innerText = data.results[0].summary_short || "N/A";
+        document.getElementById('reviewLink').href = data.results[0].link.url || "N/A";
       } else if (movieTitle === "") {
         document.getElementById('reviewTitle').innerText = "N/A";
         document.getElementById('reviewAuthor').innerText = "N/A";
