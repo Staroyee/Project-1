@@ -10,7 +10,7 @@ var infoSection = document.getElementById('info');
 //EVENT-LISTENER ON FORM ELEMENT
 formEl.addEventListener('submit', function (event) {
   event.preventDefault();
-  infoSection.scrollIntoView({ bheaviour: 'smooth'});
+  infoSection.scrollIntoView({ behavior: 'smooth'});
   //CALL THE FUNCTIONS ON SUBMIT OF FORM ELEMENT
   getMovieDetails();
   getReviewDetails();
