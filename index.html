@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Movie Multiverse</title>
 </head>
+
 <body>
-     <!-- MAIN HEADER -->
+    <!-- MAIN HEADER -->
     <div class="header">
         <h1><strong>Movie Multiverse</strong></h1>
     </div>
@@ -19,13 +21,15 @@
         <div class="row">
             <div class="twelve columns" id="form-input">
                 <form class="borderWrap" id="formborderWrap">
-                <h3 class="h3-input">Search for your favourite movies!</h3>
-                <input class="u-full-width" type="text" placeholder="Search" id="searchInput">
-                <a href="#info"><button class="button-primary">Search</button></a>
+                    <h3 class="h3-input">Search for your favourite movies!</h3>
+                    <input class="u-full-width" type="text" placeholder="Search" id="searchInput">
+                    <a href="#info"><button class="button-primary">Search</button></a>
                 </form>
             </div>
             <div class="arrow-wrapper">
-            <a href="#info"><p class="downArrow">🔻</p></a>
+                <a href="#info">
+                    <p class="downArrow">🔻</p>
+                </a>
             </div>
         </div>
     </div>
@@ -42,7 +46,7 @@
             </div>
             <div class="four columns">
                 <h2 id="movieDetails">MOVIE DETAILS</h2>
-                    <button class="button-secondary" id="favouritesButton">💾</button>                   
+                <button class="button-secondary" id="favouritesButton">💾</button>
                 <div class="movie-container">
                     <p>Title: <span id="movieTitle"></span></p>
                     <p>Year: <span id="movieYear"></span></p>
@@ -56,7 +60,9 @@
                     <p>Title: <span id="reviewTitle"></span></p>
                     <p>Author: <span id="reviewAuthor"></span></p>
                     <p>Summary: <span id="reviewSummary"></span></p>
-                    <a id="reviewLink" href=""><p style="font-size: 20px;">NY Times Review Link</p></a>
+                    <a id="reviewLink" href="">
+                        <p style="font-size: 20px;">NY Times Review Link</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -65,4 +71,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
