@@ -4,11 +4,13 @@ var nyTimesAPIKEY = "87EYTdm08vUVn8TB0BDTRVYiMy15YpUs";
 
 
 //VARIABLE STORING THE FORM INPUT ELEMENT
-var formEl = document.getElementById('form-input')
+var formEl = document.getElementById('form-input');
+var infoSection = document.getElementById('info');
 
 //EVENT-LISTENER ON FORM ELEMENT
 formEl.addEventListener('submit', function (event) {
   event.preventDefault();
+  infoSection.scrollIntoView({ bheaviour: 'smooth'});
   //CALL THE FUNCTIONS ON SUBMIT OF FORM ELEMENT
   getMovieDetails();
   getReviewDetails();
