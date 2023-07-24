@@ -117,27 +117,63 @@ function saveToFavourites(movieTitle) {
 function displayFavourites() {
   var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
   var favouritesContainer = document.getElementById('favouritesContainer');
-  favouritesContainer.innerHTML = ''; //Clear previous favourites
+  favouritesContainer.innerHTML = ''; // Clear previous favourites
 
   if (favourites.length === 0) {
     var noFavouritesMessage = document.createElement('button');
     noFavouritesMessage.innerText = 'No favourites saved yet.';
     favouritesContainer.appendChild(noFavouritesMessage);
   } else {
-    favourites.forEach(function(favourite) {
-      var favouriteElement = document.createElement('button');
-      favouriteElement.setAttribute('class', 'movieBtn');
-      favouriteElement.innerText = favourite;
+    favourites.forEach(function (favourite) {
+      var favouriteElement = document.createElement('div');
+      favouriteElement.setAttribute('class', 'favouriteItem');
+
+      var movieTitleElement = document.createElement('button');
+      movieTitleElement.setAttribute('class', 'movieBtn');
+      movieTitleElement.innerText = favourite;
+      favouriteElement.appendChild(movieTitleElement);
+
+      var removeButton = document.createElement('button');
+      removeButton.setAttribute('class', 'removeBtn');
+      removeButton.innerText = 'x';
+      favouriteElement.appendChild(removeButton);
+
       favouritesContainer.appendChild(favouriteElement);
     });
   }
+
+  // Add event delegation for the .movieBtn click event
+  favouritesContainer.addEventListener('click', function (event) {
+    if (event.target.classList.contains('movieBtn')) {
+      movieTitle = event.target.innerText;
+      getMovieDetails();
+      getReviewDetails();
+    } else if (event.target.classList.contains('removeBtn')) {
+      var movieToRemove = event.target.parentElement.querySelector('.movieBtn').innerText;
+      removeFavourite(movieToRemove);
+    }
+  });
 }
+
+// ADDITIONAL FUNCTION TO REMOVE A MOVIE FROM FAVOURITES
+function removeFavourite(movieTitle) {
+  var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+  var updatedFavourites = favourites.filter(function (favourite) {
+    return favourite !== movieTitle;
+  });
+
+  localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
+  displayFavourites(); // Refresh the display after removal
+}
+
+// EVENT-LISTENER FOR REMOVE BUTTON
+var favouritesContainer = document.getElementById('favouritesContainer');
+favouritesContainer.addEventListener('click', function (event) {
+  if (event.target.classList.contains('removeBtn')) {
+    var movieTitleToRemove = event.target.parentElement.querySelector('.movieBtn').innerText;
+    removeFavourite(movieTitleToRemove);
+  }
+});
 
 // Displays favourites on page load
 displayFavourites();
-
-$('.movieBtn').click(function() {
-  movieTitle = $(this).html();
-  getMovieDetails();
-  getReviewDetails();
-});
