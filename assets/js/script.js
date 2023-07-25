@@ -96,8 +96,11 @@ saveButton.addEventListener('click', function() {
   saveToFavourites(movieTitle);
 });
 
-//SAVE MOVIE TITLE TO favourites IN LOCAL STORAGE
+//SAVE MOVIE TITLE TO FAVOURITES IN LOCAL STORAGE
 function saveToFavourites(movieTitle) {
+  if (movieTitle.trim() === "") {
+    return; // If the movie title is blank, do nothing and return early
+  }
   // Get existing favourites from local storage or display an empty array
   var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
 
@@ -106,7 +109,7 @@ function saveToFavourites(movieTitle) {
     favourites.push(movieTitle);
     // Save updated favourites array back to local storage
     localStorage.setItem ('favourites', JSON.stringify(favourites));
-    alert("Movie saved to favourites!");
+    console.log("Movie saved to favourites")
     displayFavourites();
   } else {
       alert("Movie is already in favourites")
@@ -125,20 +128,24 @@ function displayFavourites() {
     favouritesContainer.appendChild(noFavouritesMessage);
   } else {
     favourites.forEach(function (favourite) {
-      var favouriteElement = document.createElement('div');
-      favouriteElement.setAttribute('class', 'favouriteItem');
-
-      var movieTitleElement = document.createElement('button');
-      movieTitleElement.setAttribute('class', 'movieBtn');
-      movieTitleElement.innerText = favourite;
-      favouriteElement.appendChild(movieTitleElement);
-
-      var removeButton = document.createElement('button');
-      removeButton.setAttribute('class', 'removeBtn');
-      removeButton.innerText = 'x';
-      favouriteElement.appendChild(removeButton);
-
-      favouritesContainer.appendChild(favouriteElement);
+      // Only create the button if the movie title is not empty
+      if (favourite.trim() !== ""){
+        var favouriteElement = document.createElement('div');
+        favouriteElement.setAttribute('class', 'favouriteItem');
+  
+        var movieTitleElement = document.createElement('button');
+        movieTitleElement.setAttribute('class', 'movieBtn');
+        movieTitleElement.innerText = favourite;
+        favouriteElement.appendChild(movieTitleElement);
+  
+        var removeButton = document.createElement('button');
+        removeButton.setAttribute('class', 'removeBtn');
+        removeButton.innerText = 'x';
+        favouriteElement.appendChild(removeButton);
+  
+        favouritesContainer.appendChild(favouriteElement);
+      }
+  
     });
   }
 
