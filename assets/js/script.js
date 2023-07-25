@@ -2,7 +2,6 @@
 var omdbAPIKEY = "5cd920da";
 var nyTimesAPIKEY = "87EYTdm08vUVn8TB0BDTRVYiMy15YpUs";
 
-
 //VARIABLE STORING THE FORM INPUT ELEMENT
 var formEl = document.getElementById('form-input');
 var infoSection = document.getElementById('info');
