@@ -98,7 +98,7 @@ saveButton.addEventListener('click', function() {
 
 //SAVE MOVIE TITLE TO FAVOURITES IN LOCAL STORAGE
 function saveToFavourites(movieTitle) {
-  if (movieTitle.trim() === "") {
+  if (movieTitle.trim() === "" || movieTitle === "N/A") {
     return; // If the movie title is blank, do nothing and return early
   }
   // Get existing favourites from local storage or display an empty array
