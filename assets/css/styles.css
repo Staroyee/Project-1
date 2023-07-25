@@ -178,6 +178,13 @@ h3.ul span {
     border: none;
 }
 
+.noFavourites {
+    background-color: rgb(29, 29, 29);
+    text-align: center;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+
 .movieBtn {
     color: black;
     background-color: rgb(82, 205, 253);
@@ -197,13 +204,14 @@ h3.ul span {
 .removeBtn {
     white-space: nowrap;
     margin-right: -15px;
+    background-color: rgb(29, 29, 29);
 }
 
 .favouriteItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
 #reviewLink {
     padding-top: 20px;
