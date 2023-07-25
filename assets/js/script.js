@@ -120,8 +120,9 @@ function displayFavourites() {
   favouritesContainer.innerHTML = ''; // Clear previous favourites
 
   if (favourites.length === 0) {
-    var noFavouritesMessage = document.createElement('button');
+    var noFavouritesMessage = document.createElement('h5');
     noFavouritesMessage.innerText = 'No favourites saved yet.';
+    noFavouritesMessage.setAttribute('class', 'noFavourites');
     favouritesContainer.appendChild(noFavouritesMessage);
   } else {
     favourites.forEach(function (favourite) {
