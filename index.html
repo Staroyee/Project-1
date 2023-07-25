@@ -34,11 +34,12 @@
         </div>
     </div>
     <!-- INFO HEADER -->
-    <div id="info" class="info-header">
-        <h2><strong>INFO</strong></h2>
-    </div>
+    
     <!--COLUMNS: FAVOURITES - MOVIE DETAILS - REVIEWS -->
     <div class="detail-container">
+        <div id="info" class="info-header">
+        <h2><strong>INFO</strong></h2>
+    </div>
         <div class="row" id="detail-row">
             <div class="four columns">
                 <h2 id="favourites">FAVOURITES</h2>
@@ -48,18 +49,20 @@
                 <h2 id="movieDetails">MOVIE DETAILS</h2>
                 <button class="button-secondary" id="favouritesButton">💾</button>
                 <div class="movie-container">
-                    <p>Title: <span id="movieTitle"></span></p>
-                    <p>Year: <span id="movieYear"></span></p>
-                    <p>Genre: <span id="movieGenre"></span></p>
-                    <p>Description: <span id="movieDescription"></span></p>
+                    <h3 class="ul">Title: <span id="movieTitle"></span></h3>
+                    <h3 class="ul">Year: <span id="movieYear"></span></h3>
+                    <h3 class="ul">Genre: <span id="movieGenre"></span></h3>
+                    <h3>Description: </h3>
+                    <span class="ul" id="movieDescription"></span>
                 </div>
             </div>
             <div class="four columns">
                 <h2 id="reviews">REVIEWS</h2>
                 <div class="reviews-container">
-                    <p>Title: <span id="reviewTitle"></span></p>
-                    <p>Author: <span id="reviewAuthor"></span></p>
-                    <p>Summary: <span id="reviewSummary"></span></p>
+                    <h3 class="ul">Title: <span id="reviewTitle"></span></h3>
+                    <h3 class="ul">Author: <span id="reviewAuthor"></span></h3>
+                    <h3>Summary: </h3>
+                    <span class="ul" id="reviewSummary"></span>
                     <a id="reviewLink" href="">
                         <p style="font-size: 20px;">NY Times Review Link</p>
                     </a>
