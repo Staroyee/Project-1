@@ -34,9 +34,16 @@ body {
     margin-bottom: 0%;
 }
 
+.div {
+    background-image: url("./img2.jpg"); 
+    background-size: cover;
+    background-position: center;
+}
+
 .container {
+   
     position: relative;
-    z-index: 1;
+
     height: 100vh;
     text-align: center;
     
@@ -45,27 +52,37 @@ body {
 .tag {
     display: flex;
     justify-content: center;
+    
 }
 
 .tagline {
-    padding-top: 90px;
+    margin-top: 90px;
     position: absolute;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 1);
   }
   .tagline span {
     position: relative;
     display: inline-block;
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
-    animation: flip 2s infinite;
+    animation: flip 4.5s infinite;
     animation-delay: calc(.2s * var(--i))
+    
   }
   @keyframes flip {
     0%,80% {
       transform: rotateY(360deg) 
     }
   }
+
+
+.button-primary {
+    box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 1);
+}
 
 .arrow-wrapper {
     display: flex;
@@ -83,25 +100,22 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding: 20px;
     box-sizing: border-box;
+    
+}
+
+.input {
+    text-align: center;
 }
 
 #searchInput {
     color: black;
   }
 
-.borderWrap {
-    background: linear-gradient(180deg, rgb(26, 26, 26) 0%, rgb(103, 103, 103) 51%, rgb(26, 26, 26) 100%);
-    border: 1px solid rgb(148, 140, 140);
-    padding: 50px 150px;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 35px 21px rgba(0, 0, 0, 0.7);
-}
-
 .h3-input {
     font-size: 40px;
     font-weight: normal;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
 }
 
 p.downArrow{
@@ -117,7 +131,6 @@ p.downArrow{
 
 /* INFO SECTION CSS */
 .info-header {
-    margin-top: 10px;
     width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
@@ -135,14 +148,14 @@ p.downArrow{
 }
 
 .detail-container {
-    height: 100vh;
+    height: 70vh;
     width: 100%;
 }
 
 .four.columns {
     padding-top: 10px;
     border: 1px solid rgb(255, 255, 255);
-    height: 95vh;
+    height: 91.1vh;
     background-color: rgb(29, 29, 29);
     box-shadow: 0px 3px 35px 21px rgba(0, 0, 0, 0.7);
 }
@@ -169,11 +182,10 @@ h2#movieDetails {
     flex-direction: column;
     position: relative;
     top: -12px;
-    height: 88vh;
+    height: 85vh;
     width: 100%;
-    padding: 25px;
+    padding: 25px 25px 0px 25px;
     background-color: azure;
-    overflow-y: scroll;
 }
 
 .reviews-container h3,
@@ -223,9 +235,9 @@ h3.ul span {
     word-wrap: break-word;
     white-space: normal;
     flex: 1; /* container grows to fit content */
-    display: flex; 
+    display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .removeBtn {
@@ -247,3 +259,6 @@ h3.ul span {
 .ul {
     border-bottom: 1px solid black;
 }
+
+/*Media Queries
+(info page: 3 columns into 1 column at 968px)
