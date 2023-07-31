@@ -25,7 +25,7 @@ $("#searchInput").change(function() {
 
 function getMovieDetails(movie) {
     
-  var omdbQueryUrl = "http://www.omdbapi.com/?apikey=" + omdbAPIKEY + "&t=" + movieTitle;
+  var omdbQueryUrl = "https://www.omdbapi.com/?apikey=" + omdbAPIKEY + "&t=" + movieTitle;
 console.log(omdbQueryUrl);
   fetch(omdbQueryUrl)
     .then(function (response) {
